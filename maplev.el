@@ -4889,7 +4889,6 @@ If optional arg HIDE is non-nil do not display buffer."
 ;; Delete before shipping
 
 ;; Local variables:
-;; mode: folding
 ;; max-lisp-eval-depth: 1000
 ;; indent-tabs-mode:nil
 ;; end:

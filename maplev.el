@@ -1573,7 +1573,7 @@ is fixed the solution is to open the entire buffer."
   (and (or (< position (point-min))
            (> position (point-max)))
        (widen))
-  (if folding-mode (folding-open-buffer))
+  ;; (if folding-mode (folding-open-buffer))
   (goto-char position))
 
 (defun maplev-add-imenu ()
@@ -1585,7 +1585,7 @@ is fixed the solution is to open the entire buffer."
 (defun maplev--imenu-create-index-function ()
   "Create an index for `imenu'.
 Check whether `folding-mode' is active."
-  (if folding-mode (folding-open-buffer))
+  ;; (if folding-mode (folding-open-buffer))
   (imenu-default-create-index-function))
 ;;}}}
 ;;{{{ Buffer edit functions

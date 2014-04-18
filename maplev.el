@@ -141,8 +141,8 @@
 ;;{{{ Compatibility assignments
 
 (eval-and-compile
-  (if (not (boundp 'folding-mode)) (defvar folding-mode nil))
-  (if (not (fboundp 'folding-open-buffer)) (defun folding-open-buffer ()))
+  ;; (if (not (boundp 'folding-mode)) (defvar folding-mode nil))
+  ;; (if (not (fboundp 'folding-open-buffer)) (defun folding-open-buffer ()))
 
   (defvar maplev-xemacsp
     (or (featurep 'xemacs)

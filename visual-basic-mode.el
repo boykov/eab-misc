@@ -1245,7 +1245,7 @@ If file is relative then default-directory provides the path"
         ()
       (find-file-noselect file-absolute ))))
 
-
+(provide 'visual-basic-mode)
 
 ;;; visual-basic-mode.el ends here
 

@@ -1339,6 +1339,7 @@ expression."
 ;;}}}
 ;;{{{ Loading
 
+;;;###autoload
 (defun pm-def-macro (macro-name mode key desc macro-def)
   "Defines a new macro.
 This function is the one written into the init file."

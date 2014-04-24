@@ -202,6 +202,7 @@ If POS is nil, use current buffer location."
       (setq buffer-read-only t)
       (top-mode))))
 
+;;;###autoload
 (defun top ()
   "Runs 'top' in an emacs buffer."
   (interactive)

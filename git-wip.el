@@ -31,3 +31,5 @@
     (git-wip-wrapper)))
 
 (add-hook 'after-save-hook 'git-wip-if-git)
+
+(provide 'git-wip)

@@ -87,7 +87,7 @@
   (when (or (not shell-history-add-ascii-only)
             (string-match "^[\000-\177]+$" entry))
     (with-current-buffer (shell-history-buffer)
-      (revert-buffer t t)
+      (revert-buffer t t t)
       (goto-char (point-max))
       (when (shell-history-zsh-extended-history-p)
         (insert (format-time-string ": %s:0;" (current-time))))

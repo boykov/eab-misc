@@ -124,7 +124,7 @@
 
 ;;}}}
 
-(require 'abbrevlist)
+;;(require 'abbrevlist)
 (require 'font-lock)
 (require 'comint)
 (require 'info)

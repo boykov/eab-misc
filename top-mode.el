@@ -264,7 +264,7 @@ from string."
   (save-excursion
     (beginning-of-line)
     (re-search-forward "\\s-*\\([0-9]+\\)\\s-+" (line-end-position))
-    (string-to-int (match-string 1))))
+    (string-to-number (match-string 1))))
 
 (defun top-mode-show-specific-user ()
   (interactive)
@@ -287,7 +287,7 @@ from string."
           (when (and os oe)
             (setq str (buffer-substring (overlay-start ov) (overlay-end ov)))
             (string-match "^\\s-*\\([0-9]+\\)" str)
-            (string-to-int (top-mode-string-trim
+            (string-to-number (top-mode-string-trim
                             (substring str 0 (match-end 0)))))))
       top-mode-overlay-list))
     '<)

@@ -9199,28 +9199,20 @@ Non-interactively:
 ;;
 (defun dired-buffers-for-dir (dir &optional file subdirs)
   "Return a list of buffers that Dired DIR (top level or in-situ subdir).
-DIR is automatically expanded with `expand-file-name' using the
- `default-directory'.  If you need expansion relative to some other
- directory then do that before calling `dired-buffers-for-dir'.
 If FILE is non-nil, include only those whose wildcard pattern (if any)
- matches FILE.
-If SUBDIRS is non-nil, also include the dired buffers of directories
- below DIR.
-
+matches FILE.
 The list is in reverse order of buffer creation, most recent last.
 As a side effect, killed Dired buffers for DIR are removed from
- `dired-buffers'."
-  (setq dir  (expand-file-name (file-name-as-directory dir)))
+`dired-buffers'."
+  (setq dir  (file-name-as-directory dir))
   (let (result buf)
     (dolist (elt  dired-buffers)
       (setq buf  (cdr elt))
       (cond ((null (buffer-name buf))   ; Buffer is killed - clean up.
              (setq dired-buffers  (delq elt dired-buffers)))
-            ((or (and (fboundp 'file-in-directory-p) ; Emacs 24+
-                      (file-in-directory-p (car elt) dir))
-                 (dired-in-this-tree dir (car elt)))
+            ((dired-in-this-tree dir (car elt))
              (with-current-buffer buf
-               (and (or (and subdirs  (fboundp 'file-in-directory-p))  (assoc dir dired-subdir-alist))
+               (and (assoc dir dired-subdir-alist)
                     (or (null file)
                         (if (stringp dired-directory)
                             ;; Allow for consp `dired-directory' too.

@@ -12175,7 +12175,7 @@ FUNCTION should not manipulate the files.  It should just read input
                                                        special-display-frame-alist))
                    (default-frame-alist          (cons '(menu-bar-lines . 0)
                                                        default-frame-alist)))
-               (dired-pop-to-buffer buffer-or-name)
+               (pop-to-buffer buffer-or-name)
                ;; Work around Emacs 22 bug in `dired-pop-to-buffer', which can exit with Dired buffer current.
                (set-buffer buffer-or-name)
                (goto-char (point-min)))
